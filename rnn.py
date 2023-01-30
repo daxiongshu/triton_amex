@@ -101,7 +101,7 @@ class RnnDataset(Dataset):
 
         
     def _remove_cols(self,df):
-        not_used = [i for i in df.columns if df[i].dtype=='O']+['cid']
+        not_used = [i for i in df.columns if df[i].dtype=='O']+['cid','S_2']
         print("RnnDataset not used columns:")
         print(not_used)
         cat_cols = get_cat_cols()
