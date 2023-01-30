@@ -1,2 +1,8 @@
 *.pt
+__pycache__
+*.pbtxt
+*.model
+*.npy
+lightning_logs
 *ipynb_checkpoints
+backup

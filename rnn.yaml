@@ -1,0 +1,36 @@
+model:
+  desc: type of the model
+  value: rnn
+epochs:
+  desc: Number of epochs to train over
+  value: 5 
+batch_size:
+  desc: Size of each mini-batch
+  value: 512
+seq:
+  desc: Sequence length
+  value: 5 
+H1:
+  desc: Number of hidden neurons in 1st GRU layer
+  value: 512
+H2:
+  desc: Number of hidden neurons in 1st GRU layer
+  value: 128
+layers:
+  desc: Number of layers of GRU 
+  value: 1
+E:
+  desc: width of embedding of cat features
+  value: 192 
+dropout:
+  desc: probs of zeroing values
+  value: 0
+lr:
+  desc: learning rate
+  value: 0.001
+wd:
+  desc: weight decay
+  value: 0.0
+tcols:
+  desc: target columns names
+  value: all
