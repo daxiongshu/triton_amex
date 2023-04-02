@@ -1,4 +1,5 @@
-torchvision
+pytorch
+pytorch-lightning
 attrdict
 nvidia-pyindex
 tritonclient[all]

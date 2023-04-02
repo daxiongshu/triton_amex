@@ -68,6 +68,7 @@ class RnnDataset(Dataset):
         target_cols = self._get_target_cols(df, config.tcols)
         self.xids,self.yids = self._get_x_y_cols_ids(df, target_cols)
         self._set_y_mask(df)
+        self.data_orig = df.to_pandas().values
         df = self._normalize(df)
         self.data = df.to_pandas().values
 
@@ -170,7 +171,8 @@ class TestRnnDataset(RnnDataset):
         data = self.data[s:e]
         y = data[:,self.yids]
         x,_ = self._pad(y)
-        return toT(x)
+        xo,_ = self._pad(self.data_orig[s:e][:,self.yids])
+        return toT(x),toT(xo)
     
 class RNN(pl.LightningModule):
     def __init__(self, x_dim, y_dim, config):
